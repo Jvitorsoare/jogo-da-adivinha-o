@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jogo de adivinhação</title>
+	<style>
+		body {
+			font-family: sans-serif;
+			text-align: center;
+		}
+		h1 {
+			margin-top: 50px;
+		}
+		p {
+			margin-top: 20px;
+			font-size: 24px;
+			font-weight: bold;
+		}
+		input {
+			margin-top: 20px;
+			font-size: 18px;
+			padding: 10px;
+		}
+		button {
+			margin-top: 20px;
+			font-size: 18px;
+			padding: 10px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Jogo de adivinhação</h1>
+	<p>Tente adivinhar um número entre 1 e 10:</p>
+	<input type="number" id="palpite">
+	<button onclick="verificar()">Verificar</button>
+	<p id="resultado"></p>
+	<script>
+		function verificar() {
+			var resposta = Math.floor(Math.random() * 10) + 1;
+			var palpite = document.getElementById("palpite").value;
+			if (palpite == resposta) {
+				document.getElementById("resultado").innerHTML = "Parabéns, você acertou!";
+			} else {
+				document.getElementById("resultado").innerHTML = "Ops, tente novamente.";
+			}
+		}
+	</script>
+</body>
+</html>
